@@ -1,0 +1,13 @@
+Round 1
+- Introduction
+- How do you implement multi-tenant architecture
+- How do you handle millions of records inside flow
+- Are you using redis
+- How do you handle flow update
+- How do organize fastapi or django project
+- How do you handle authentication 
+- How you will secure data from llm
+- How do you optimize query in postgress
+- How did you implemented pdf automation
+- are you comfertable build ci/cd pipeline in github
+- about aws services
