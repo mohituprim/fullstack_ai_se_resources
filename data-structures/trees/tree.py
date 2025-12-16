@@ -61,7 +61,7 @@ class Solution:
         return max_depth
 
 
-    def isSameTree(self, p:TreeNode, q:TreeNode)->int:
+    def isSameTree(self, p:TreeNode, q:TreeNode)->bool:
         if not p and not q:
             return True
 
@@ -72,6 +72,37 @@ class Solution:
         right = self.isSameTree(p.right, q.right)
 
         return left and right
+
+    def isSubTree(self, root:TreeNode, subRoot:TreeNode)->bool:
+        if subRoot is None:
+            return True
+        if root == None and subRoot!=None:
+            return False
+
+        if self.isSameTree(root, subRoot):
+            return True
+        
+        left = self.isSubTree(root.left, subRoot)
+        right = self.isSubTree(root.right, subRoot)
+
+        return left or right
+
+    def find_lca_bst(self, root, p, q):
+        #  We need to use the bst property ... in bst all the nodes in left side are lesser than root
+        #  all the values in right is greter than root
+        #  when root is itself ancestor
+        #  when p and q lies in different side
+        #  when both values lies in left
+        #  when both values lies in right
+        
+        while root:
+            if root.val>p.val and root.val>q.val:
+                root = root.left
+            elif: root.val<p.val and root.val<q.val:
+                root = root.right
+            else:
+                return root
+
 
 if __name__ == "__main__":
     # [4,2,7,1,3,6,9]
@@ -98,3 +129,4 @@ if __name__ == "__main__":
     print(solution.maxDepthBFS(node1))
     print(solution.maxDepthDFS(node1))
     print(solution.isSameTree(node1, node1))
+    print(solution.isSubTree(node1, node2))

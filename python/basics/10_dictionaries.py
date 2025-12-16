@@ -54,3 +54,9 @@ vehicle2.pop("mileage")
 # print keys
 for i in vehicle2:
     print(i)
+
+"""
+Notes:
+- Dictionaries: unordered mappings of unique, hashable keys to values. Keys must be immutable (str, int, tuple of immutables, etc.); values can be anything. Lookups/sets are average O(1). Preserve insertion order (CPython 3.7+). Common ops: `.get()`, `.items()`, `.keys()`, `.values()`, `.pop()`, `.update()`, `in` for key membership, `.copy()` for shallow copies.
+- Tuples: immutable, ordered sequences. Support indexing/slicing, packing/unpacking, iteration, can serve as dict keys if all elements are hashable. Good for fixed-size records (e.g., coordinates), returning multiple values, and protecting data from accidental modification. Use namedtuple/dataclass for readability if many fields are involved.
+"""
